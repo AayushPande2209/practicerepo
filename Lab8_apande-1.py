@@ -1,3 +1,5 @@
+# -User enters UPC code
+# -Strips whitespace and checks if it has any other chars besides numbers, and if len(upc) != 12
 while True:
     upc = input("Enter a 12-digit UPC: ").strip()
 
@@ -13,6 +15,7 @@ while True:
 upc_code11 = upc[:11]
 provided_check = upc[11]
 
+#function to calc 12th digit/validate upc
 def find_UPC(upc_code11):
     total = 0
     for i, digit in enumerate(upc_code11):
