@@ -1,10 +1,8 @@
-"""
-Program Name: Match Coins Game: Coin Class
+'''Program Name: Match Coins Game: Coin Class
 Author: Aayush Pande
 Purpose: Defines the Coin class used in the Match Coins game.
 Starter Code: None
-Date: July 1, 2026
-"""
+Date: July 1, 2026'''
 
 import random
 
