@@ -48,11 +48,12 @@ class WordAnalyzer:
 
 
 def main():
+    folder = Path(__file__).parent
     files = {
-        "1": Path("lab 3") / "Tarzan Assessment.txt",
-        "2": Path("lab 3") / "Monte Cristo Assessment.txt",
-        "3": Path("lab 3") / "Princess Mars Assessment.txt",
-        "4": Path("lab 3") / "Treasure Island Assessment.txt",
+        "1": folder / "Tarzan Assessment.txt",
+        "2": folder / "Monte Cristo Assessment.txt",
+        "3": folder / "Princess Mars Assessment.txt",
+        "4": folder / "Treasure Island Assessment.txt",
     }
 
     running = True
