@@ -38,3 +38,10 @@ class WordAnalyzer:
         except FileNotFoundError:
             print(f"Error: The file '{self.__filepath.name}' was not found.")
             return False
+
+    def print_report(self):
+        """Print each word and its count in alphabetical order."""
+        words = list(self.__frequencies.keys())
+        words.sort()
+        for word in words:
+            print(f"{word:<20} :: {self.__frequencies[word]}")
