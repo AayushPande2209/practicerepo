@@ -17,3 +17,24 @@ class WordAnalyzer:
     def __init__(self, filepath):
         self.__filepath = Path(filepath)
         self.__frequencies = {}
+
+    def process_file(self):
+        """Read the file and count each word. Return True if successful."""
+        try:
+            if not self.__filepath.exists():
+                raise FileNotFoundError
+            translation_table = str.maketrans("", "", string.punctuation)
+            with self.__filepath.open("r", encoding="utf-8") as file:
+                for line in file:
+                    line = line.lower()
+                    line = line.translate(translation_table)
+                    words = line.split()
+                    for word in words:
+                        if word in self.__frequencies:
+                            self.__frequencies[word] += 1
+                        else:
+                            self.__frequencies[word] = 1
+            return True
+        except FileNotFoundError:
+            print(f"Error: The file '{self.__filepath.name}' was not found.")
+            return False
