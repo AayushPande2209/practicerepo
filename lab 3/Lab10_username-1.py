@@ -45,3 +45,40 @@ class WordAnalyzer:
         words.sort()
         for word in words:
             print(f"{word:<20} :: {self.__frequencies[word]}")
+
+
+def main():
+    files = {
+        "1": Path("lab 3") / "Tarzan Assessment.txt",
+        "2": Path("lab 3") / "Monte Cristo Assessment.txt",
+        "3": Path("lab 3") / "Princess Mars Assessment.txt",
+        "4": Path("lab 3") / "Treasure Island Assessment.txt",
+    }
+
+    running = True
+    while running:
+        print()
+        print("1. Tarzan")
+        print("2. Monte Cristo")
+        print("3. Princess Mars")
+        print("4. Treasure Island")
+        print("5. Exit")
+        choice = input("Enter your choice (1-5): ")
+
+        if choice == "5":
+            print("Goodbye!")
+            running = False
+        elif choice in files:
+            filepath = files[choice]
+            print(f"Processing {filepath.name}...")
+            analyzer = WordAnalyzer(filepath)
+            if analyzer.process_file():
+                analyzer.print_report()
+            input("Press Enter to return to the menu.")
+        else:
+            print("Invalid choice. Please select from 1-5.")
+            input("Press Enter to return to the menu.")
+
+
+if __name__ == "__main__":
+    main()
