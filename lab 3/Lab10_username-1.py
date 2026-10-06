@@ -24,7 +24,7 @@ class WordAnalyzer:
             if not self.__filepath.exists():
                 raise FileNotFoundError
             translation_table = str.maketrans("", "", string.punctuation)
-            with self.__filepath.open("r", encoding="utf-8") as file:
+            with self.__filepath.open("r", encoding="utf-8-sig") as file:
                 for line in file:
                     line = line.lower()
                     line = line.translate(translation_table)
