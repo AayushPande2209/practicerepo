@@ -9,3 +9,11 @@ Date: October 5, 2026
 
 from pathlib import Path
 import string
+
+
+class WordAnalyzer:
+    """Counts the words in a text file."""
+
+    def __init__(self, filepath):
+        self.__filepath = Path(filepath)
+        self.__frequencies = {}
